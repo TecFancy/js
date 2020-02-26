@@ -1,0 +1,76 @@
+{
+  "title": "JavaScript 中文版文档",
+  "author": "若非",
+  "description": "JavaScript docs of Chinese.",
+  "language": "zh-hans",
+  "gitbook": "3.2.3",
+  "links": {
+    "sidebar": {
+      "主页": "https://ruofei.site/"
+    }
+  },
+  "structure": {
+    "readme": "INTRO.md",
+    "glossary": "GLOSSARY.md"
+  },
+  ,
+  "styles": {
+    "website": "styles/website.css",
+    "ebook": "styles/ebook.css",
+    "pdf": "styles/pdf.css",
+    "mobi": "styles/mobi.css",
+    "epub": "styles/epub.css"
+  },
+  "plugins": [
+    "code",
+    "search-pro",
+    "chapter-fold",
+    "popup",
+    "advanced-emoji",
+    "edit-link",
+    "github",
+    "sitemap-general",
+    "gtalk",
+    "hide-element",
+    "-highlight"
+  ],
+  "pluginsConfig": {
+    "sharing": {
+      "facebook": false,
+      "twitter": false,
+      "google": false,
+      "weibo": false,
+      "instapaper": false,
+      "vk": false,
+      "all": [
+        "weibo",
+        "facebook", 
+        "twitter",
+        "google", 
+        "instapaper",
+        "vk"
+      ]
+    },
+    "edit-link": {
+      "base": "https://github.com/smpower/supermemo/blob/gitbook",
+      "label": "编辑本页"
+    },
+    "github": {
+      "url": "https://github.com/smpower/supermemo.git"
+    },
+    "sitemap-general": {
+      "prefix": "https://supermemo.ruofei.site/"
+    },
+    "gtalk": {
+      "clientID": "57d78aea7ea945e16976",
+      "clientSecret": "25953ac8037cf8fb54c53c8d958017215f204991",
+      "repo": "ruofei.site.gitalk",
+      "owner": "smpower",
+      "admin": ["smpower"]
+    },
+    "hide-element": {
+      "elements": [".gitbook-link"]
+    }
+  }
+}
+  

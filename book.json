@@ -1,0 +1,24 @@
+{
+  "title": "JavaScript 中文版文档",
+  "author": "若非",
+  "description": "JavaScript docs of Chinese.",
+  "language": "zh-hans",
+  "gitbook": "3.2.3",
+  "links": {
+    "sidebar": {
+      "主页": "https://ruofei.site/"
+    }
+  },
+  "structure": {
+    "readme": "INTRO.md",
+    "glossary": "GLOSSARY.md"
+  },
+  "styles": {
+    "website": "styles/website.css",
+    "ebook": "styles/ebook.css",
+    "pdf": "styles/pdf.css",
+    "mobi": "styles/mobi.css",
+    "epub": "styles/epub.css"
+  }
+}
+  
