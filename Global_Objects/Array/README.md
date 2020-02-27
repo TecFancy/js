@@ -1,6 +1,9 @@
 # Array
 
-JavaScript 的 `Array` 对象是用于构造数组的全局对象，数组是类似于列表的高阶对象。
+JavaScript 的 `Array` 对象是用于构造数组的全局对象。JavaScript 的 `Array` 具有以下特征：
+
+1. 数组元素可以是任何类型。比如，可以用数组的第一个位置保存字符串，第二个位置保存数组，第三个位置来保存对象，以此类推。
+2. 数组大小可动态调整。数组长度随着数据的添加可自动增长，以容纳新数据。
 
 **创建数组**
 
@@ -116,3 +119,74 @@ const colors = ['red', 'green'];
 const shallowCopy = colors.slice(); // 潜复制
 // shallowCopy: ['red', 'green']
 ```
+
+## 语法
+
+创建数组的方式有两种，第一种是使用 `Array` 构造函数。如下代码所示：
+
+``` js
+const colors = new Array();
+// colors: []
+// colors.length: 0
+```
+
+上面代码会创建一个长度为 0 的空数组 `colors`。如果预先知道要保存的项目数量，也可以给构造函数传递该参数，该数量会自动变成 `length` 属性的值。代码如下：
+
+``` js
+const colors = new Array(3);
+// colors: [ <5 empty items> ]
+// colors.length: 5
+```
+
+也可以向 `Array` 构造函数传递数组应该包含的项。以下代码创建了一个包含 3 个字符串值的数组：
+
+``` js
+const colors = new Array('red', 'green', 'blue');
+// colors: ['red', 'green', 'blue']
+// colors.length: 3
+```
+
+如果给构造函数传递一个值的话，虽然也可以创建数组，但是却要复杂一些。因为如果传递的是数值，则会按照数值创建包含给定项的数组；而如果传递的是其他类型的参数，则会创建包含那个值的只有一项的数组。下面代码说明了这两种情况：
+
+``` js
+const colors = new Array(3); // 创建一个包含 3 个元素的数组
+// colors: [ <3 empty items> ]
+// colors.length: 3
+
+const names = new Array('Olive'); // 创建一个包含 1 个元素的数组
+// names: ['Olive']
+// names.length: 1
+```
+
+在使用 `Array` 构造函数创建数组时，可以省略 `new` 操作符。比如下面的例子，省略 `new` 操作符的结果与上面代码的结果相同：
+
+``` js
+const colors = Array(3);
+// colors: [ <3 empty items> ]
+// colors.length: 3
+
+const names = Array('Olive');
+// names: ['Olive']
+// names.length: 1
+```
+
+创建数组的第二种方式是使用数组字面量表示法。数组字面量是由一对包含数组元素的方括号表示，数组元素之间用逗号（,）隔开：
+
+``` js
+const colors = ['red', 'green', 'white']; // 创建一个包含 3 个字符串的数组
+const names = []; // 创建一个空数组
+```
+
+总结起来，创建数组的语法如下：
+
+``` none
+new Array(element0, element1[, ...[, elementN]])
+new Array(arrayLength)
+Array(element0, element1[, ...[, elementN]])
+Array(arrayLength)
+[element0, element1, ..., elementN]
+```
+
+## 属性
+
+## 方法
