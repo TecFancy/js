@@ -1,6 +1,7 @@
 * [介绍](INTRO.md)
 * [标准内置对象](./Global_Objects/README.md)
   * [Array](./Global_Objects/Array/README.md)
+    * [Array.prototype.pop()](./Global_Objects/Array/pop.md)
 * [表达式和运算符](./Operators/README.md)
 * [语句和运算符](./Statements/README.md)
 * [函数](./Functions/README.md)

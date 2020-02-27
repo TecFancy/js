@@ -120,6 +120,8 @@ const shallowCopy = colors.slice(); // 潜复制
 // shallowCopy: ['red', 'green']
 ```
 
+----
+
 ## 语法
 
 创建数组的方式有两种，第一种是使用 `Array` 构造函数。如下代码所示：
@@ -243,7 +245,7 @@ Array(arrayLength)
 
 **`Array.prototype.fill()`**
 
-**`Array.prototype.pop()`**
+[**`Array.prototype.pop()`**](/Global_Objects/Array/pop.html)
 
 **`Array.prototype.push()`**
 
