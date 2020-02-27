@@ -13,7 +13,6 @@
     "readme": "INTRO.md",
     "glossary": "GLOSSARY.md"
   },
-  ,
   "styles": {
     "website": "styles/website.css",
     "ebook": "styles/ebook.css",
