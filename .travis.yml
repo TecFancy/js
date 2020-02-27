@@ -51,4 +51,4 @@ after_script:
 
 env:
   global:
-    - GH_REF: github.com/smpower/js.git
+    - GH_REF: github.com/smpower/js.ruofei.site.git
