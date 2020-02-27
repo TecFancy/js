@@ -1,7 +1,7 @@
 {
-  "title": "JavaScript 中文版文档",
+  "title": "JavaScript 中文教程",
   "author": "若非",
-  "description": "JavaScript docs of Chinese.",
+  "description": "JavaScript tutorial.",
   "language": "zh-hans",
   "gitbook": "3.2.3",
   "links": {
@@ -63,7 +63,7 @@
     "gtalk": {
       "clientID": "57d78aea7ea945e16976",
       "clientSecret": "25953ac8037cf8fb54c53c8d958017215f204991",
-      "repo": "ruofei.site.gitalk",
+      "repo": "js.ruofei.site.gitalk",
       "owner": "smpower",
       "admin": ["smpower"]
     },
