@@ -247,7 +247,7 @@ Array(arrayLength)
 
 [**`Array.prototype.pop()`**](/Global_Objects/Array/pop.html)
 
-**`Array.prototype.push()`**
+[**`Array.prototype.push()`**](/Global_Objects/Array/push.html)
 
 **`Array.prototype.reverse()`**
 
