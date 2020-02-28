@@ -1,185 +1,30 @@
 # Array
 
-JavaScript 的 `Array` 对象是用于构造数组的全局对象。JavaScript 的 `Array` 具有以下特征：
-
-1. 数组元素可以是任何类型。比如，可以用数组的第一个位置保存字符串，第二个位置保存数组，第三个位置来保存对象，以此类推。
-2. 数组大小可动态调整。数组长度随着数据的添加可自动增长，以容纳新数据。
-
-**创建数组**
+## 表现形式
 
 ``` js
-const colors = ['red', 'green'];
-// colors.length: 2
-```
-
-**通过索引访问数组元素**
-
-``` js
-const colors = ['red', 'green'];
-
-const firstColor = colors[0];
-// firstColor: red
-
-const lastColor = colors[colors.length - 1];
-// lastColor: green
-```
-
-**遍历数组**
-
-``` js
-const colors = ['red', 'green'];
-
-colors.forEach((colorItem, colorIndex, array) => {
-  console.log(colorItem, colorIndex);
-});
-// red 0
-// green 1
-```
-
-**添加元素到数组末尾**
-
-``` js
-const colors = ['red', 'green'];
-
-const newLength = colors.push('gray');
-// newLength: 3
-// colors: ['red', 'green', 'gray']
-```
-
-**删除数组末尾的元素**
-
-``` js
-const colors = ['red', 'green'];
-
-const last = colors.pop();
-// last: 'green'
-// colors: ['red']
-```
-
-**添加元素到数组的头部**
-
-``` js
-const colors = ['red', 'green'];
-
-const newLength = colors.unshift('blue');
-// newLength: 3
-// colors: ['blue', 'red', 'green']
-```
-
-**删除数组最前面（头部）的元素**
-
-``` js
-const colors = ['red', 'green'];
-
-const first = colors.shift();
-// first: 'red'
-// colors: ['green']
-```
-
-**找出某个元素在数组中的索引**
-
-``` js
-const colors = ['red', 'green'];
-
-colors.push('white');
-// colors: ['red', 'green', 'white']
-
-const pos = colors.indexOf('green');
-// pos: 1
-```
-
-**通过索引删除某个数组元素**
-
-``` js
-const colors = ['red', 'green', 'white'];
-const pos = colors.indexOf('green');
-
-var removedItem = colors.splice(pos, 1);
-// removedItem: ['green']
-// colors: ['red', 'white']
-```
-
-**从一个索引位置删除多个数组元素**
-
-``` js
-const colors = ['red', 'green', 'white', 'gray'];
-const pos = 1, n = 2;
-
-// 从指定位置删除指定数量的数组元素
-// pos 定义了从数组的哪个位置开始删除，n 定义了要删除的数组数量
-const removedItems = colors.splice(pos, n);
-// removedItems: ['green', 'white']
-// colors: ['red', 'gray']
-```
-
-**复制一个数组**
-
-``` js
-const colors = ['red', 'green'];
-const shallowCopy = colors.slice(); // 潜复制
-// shallowCopy: ['red', 'green']
+[element0, element1, ..., elementN]
 ```
 
 ----
 
-## 语法
+## 特征
 
-创建数组的方式有两种，第一种是使用 `Array` 构造函数。如下代码所示：
+JavaScript 的数组具有以下特征：
 
-``` js
-const colors = new Array();
-// colors: []
-// colors.length: 0
-```
+1. 数组元素可以是任意数据类型
 
-上面代码会创建一个长度为 0 的空数组 `colors`。如果预先知道要保存的项目数量，也可以给构造函数传递该参数，该数量会自动变成 `length` 属性的值。代码如下：
+  比如，可以用数组的第一个位置保存字符串，第二个位置保存数组，第三个位置来保存对象，以此类推。
 
-``` js
-const colors = new Array(3);
-// colors: [ <5 empty items> ]
-// colors.length: 5
-```
+2. 数组大小可动态调整
 
-也可以向 `Array` 构造函数传递数组应该包含的项。以下代码创建了一个包含 3 个字符串值的数组：
+  数组长度随着数据的添加可自动增长，以容纳新数据。
 
-``` js
-const colors = new Array('red', 'green', 'blue');
-// colors: ['red', 'green', 'blue']
-// colors.length: 3
-```
+----
 
-如果给构造函数传递一个值的话，虽然也可以创建数组，但是却要复杂一些。因为如果传递的是数值，则会按照数值创建包含给定项的数组；而如果传递的是其他类型的参数，则会创建包含那个值的只有一项的数组。下面代码说明了这两种情况：
+## 创建数组的方式
 
-``` js
-const colors = new Array(3); // 创建一个包含 3 个元素的数组
-// colors: [ <3 empty items> ]
-// colors.length: 3
-
-const names = new Array('Olive'); // 创建一个包含 1 个元素的数组
-// names: ['Olive']
-// names.length: 1
-```
-
-在使用 `Array` 构造函数创建数组时，可以省略 `new` 操作符。比如下面的例子，省略 `new` 操作符的结果与上面代码的结果相同：
-
-``` js
-const colors = Array(3);
-// colors: [ <3 empty items> ]
-// colors.length: 3
-
-const names = Array('Olive');
-// names: ['Olive']
-// names.length: 1
-```
-
-创建数组的第二种方式是使用数组字面量表示法。数组字面量是由一对包含数组元素的方括号表示，数组元素之间用逗号（,）隔开：
-
-``` js
-const colors = ['red', 'green', 'white']; // 创建一个包含 3 个字符串的数组
-const names = []; // 创建一个空数组
-```
-
-总结起来，创建数组的语法如下：
+有两种方式创建数组，第一种是用 `Array` 构造函数创建数组，第二种是使用数组字面量表示法。
 
 ``` none
 new Array(element0, element1[, ...[, elementN]])
@@ -189,9 +34,48 @@ Array(arrayLength)
 [element0, element1, ..., elementN]
 ```
 
+### `Array` 构造函数
+
+`new` 操作符后跟 `Array` 构造函数，即可创建一个数组。下面代码创建了一个长度为 0 的数组 `colors`。
+
+``` js
+const colors = new Array(); // 构造函数中不传参会创建长度为 0 的数组
+```
+
+若 `Array` 构造函数的参数是一个数字，会创建指定长度的数组。比如，下面创建一个长度为 3 的数组 `arr`。在创建数组 `arr` 时，只指定了数组的长度，没有指定数组要保存的内容，所以数组 `arr` 中 3 个元素的值都为 `undefined`。
+
+``` js
+const arr = new Array(3);
+console.log(arr);
+// expected output: Array [ <3 empty items> ]
+// arr[0]: undefined; arr[1]: undefined; arr[2]: undefined;
+```
+
+如果 `Array` 构造函数的参数类型为除数字类型以外的其他任何类型，则会创建包含这些参数值的数组。下面代码创建了包含 3 个字符串值的数组：
+
+``` js
+const names = new Array('Olive', 'Jack', 'Amy');
+console.log(names);
+// expected output: Array ['Olive', 'Jack', 'Amy']
+```
+
+在使用 `Array` 构造函数创建数组时，也可以省略前面的 `new` 操作符：
+
+``` js
+const classmates = Array('Amy', 'Tony');
+```
+
+### 数组字面量表示法
+
+在实际开发中，数组字面量表示法更常用。数组字面量是由一对包含数组元素的方括号表示，数组元素之间以英文逗号(,)分割。下面代码创建了一个包含 3 个字符串值的数组：
+
+``` js
+const colors = ['red', 'green', 'blue'];
+```
+
 ----
 
-## 属性
+## 数组属性
 
 **`Array.length`**
 
@@ -203,7 +87,7 @@ Array(arrayLength)
 
 ----
 
-## 方法
+## 数组方法
 
 **`Array.from()`**
 
@@ -219,7 +103,7 @@ Array(arrayLength)
 
 ----
 
-## 数组实例
+## 数组实例的属性和方法
 
 所有数组实例都会从 `Array.prototype` 继承属性和方法。修改 `Array` 的原型会影响所有数组实例。
 
