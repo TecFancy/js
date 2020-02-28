@@ -1,13 +1,5 @@
 # Array
 
-## 表现形式
-
-``` js
-[element0, element1, ..., elementN]
-```
-
-----
-
 ## 特征
 
 JavaScript 的数组具有以下特征：
@@ -75,6 +67,27 @@ const colors = ['red', 'green', 'blue'];
 
 ----
 
+## 读取和设置数组的值
+
+通过方括号语法来访问和设置数组的值。
+
+``` js
+const colors = ['red', 'green', 'gray']; // 定义一个包含 3 个字符串值的数组
+console.log(colors[0]); // 输出：'red'
+colors[2] = 'yellow'; // 修改第三项
+colors[3] = 'black'; // 新增第四项
+```
+
+方括号中的索引代表要访问的值。如果索引值小于数组的长度，则返回对应项的值，就像上面代码中 `colors[0]` 会显示 `'red'` 一样。设置数组中某一项的值，也是使用方括号语法，这时会替换掉指定位置的值，上面代码中的 `colors[2] = 'yellow';` 便把数组的第三项替换为了字符串 `'yellow'`。如果索引值大于数组的长度，数组就会自动增加到该索引值加 1 的长度，代码中 `colors[3] = 'black';` 索引值是 3，数组长度就是 4，因此会新增数组的第四项，第四项的值是字符串 `'black'`。
+
+----
+
+## 检测数组
+
+要准确的检测数组，请使用 [`Array.isArray()`](/Global_Objects/Array/isArray.html) 方法。
+
+----
+
 ## 数组属性
 
 **`Array.length`**
@@ -93,7 +106,7 @@ const colors = ['red', 'green', 'blue'];
 
 从类数组对象或可迭代对象中创建一个新的数组实例。
 
-**`Array.isArray()`**
+[**`Array.isArray()`**](/Global_Objects/Array/isArray.html)
 
 用来判断某个变量是否是一个数组对象。
 
