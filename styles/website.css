@@ -1,0 +1,21 @@
+h1 {
+  text-align: center;
+}
+
+.NceBlock {
+  display: flex;
+  align-items: center;
+}
+
+.NceBlock.audio {
+  justify-content: start;
+}
+
+.NceBlock.image {
+  justify-content: center;
+}
+
+.NceBlock audio {
+  height: 30px;
+  outline: none;
+}

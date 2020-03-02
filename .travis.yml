@@ -1,0 +1,54 @@
+dist: trusty
+os: linux
+ 
+language: node_js
+node_js:
+  - lts/*
+
+branches:
+  only:
+    - gitbook # 只监测 gitbook 分支上的 commit
+ 
+cache:
+  directories:
+     - ./node_modules
+
+before_install:
+  - rm book.json && mv _book.json book.json
+  - npm i -g gitbook-cli # 全局安装 gitbook-cli
+  - sudo apt-get install calibre -y # 安装 calibre
+  - sudo ln -s /usr/bin/nodejs /usr/bin/node # 建立软链接
+
+install:
+  - gitbook install # 安装 book.json 中的插件
+
+# before_script:
+  # - git submodule init # 更新子模块
+  # - git submodule update
+
+script:
+  - gitbook build # 打包
+
+after_script:
+  # 提交站点分支
+  - cd ./_book
+  - git init
+  - git config --global user.name "smpower"
+  - git config --global user.email "rf.wangchn@gmail.com"
+  - git add .
+  - git commit -m "Updated gitbook by Travis-CI."
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master # 发布到 master 分支
+
+  # 提交书籍分支
+  - cd ../ && mkdir _book_file
+  - # gitbook pdf ./ ./_book_file/supermemo.pdf # 生成 PDF 时报错，暂时忽略
+  - gitbook epub ./ ./_book_file/supermemo.epub # 生成 epub 文档
+  - gitbook mobi ./ ./_book_file/supermemo.mobi # 生成 mobi 文档
+  - cd _book_file && git init
+  - git add .
+  - git commit -m 'Generated book files.'
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:_book_file # 发布到 _book_file 分支
+
+env:
+  global:
+    - GH_REF: github.com/smpower/js.ruofei.site.git
