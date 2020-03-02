@@ -61,8 +61,8 @@
       "prefix": "https://supermemo.ruofei.site/"
     },
     "gtalk": {
-      "clientID": "57d78aea7ea945e16976",
-      "clientSecret": "25953ac8037cf8fb54c53c8d958017215f204991",
+      "clientID": "c1d05fd6ca9343bb16f9",
+      "clientSecret": "bfaab40c3dda131947f4694bbe6ea09b08c1db4a",
       "repo": "js.ruofei.site.gitalk",
       "owner": "smpower",
       "admin": ["smpower"]
